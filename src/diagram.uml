@@ -2,52 +2,13 @@
 <Diagram>
   <ID>JAVA</ID>
   <OriginalElement />
-  <nodes>
-    <node x="262.4205443282859" y="407.62942240913287">model.Product</node>
-    <node x="628.8783066153782" y="703.4734553989899">model.CartItem</node>
-    <node x="896.878306615378" y="92.89720666991383">model.Customer</node>
-    <node x="-79.03145568189518" y="104.89720666991383">model.Book</node>
-    <node x="616.3783066153782" y="-292.52654460100996">model.Bill</node>
-    <node x="1174.878306615378" y="429.47345539899004">model.Staff</node>
-    <node x="304.9205443282859" y="857.4734553989899">model.Rank</node>
-    <node x="942.878306615378" y="429.47345539899004">model.Person</node>
-    <node x="568.8783066153782" y="408.47345539899004">model.MovieDisc</node>
-    <node x="-127.89042193573684" y="453.1531849306441">model.MusicDisc</node>
-    <node x="323.06843003911246" y="4.614865388296039">model.Warehouse</node>
-  </nodes>
+  <nodes />
   <notes />
-  <edges>
-    <edge source="model.MovieDisc" target="model.Product" relationship="GENERALIZATION">
-      <point x="-3.0661537812193274E-4" y="-116.00045539899004" />
-      <point x="734.878" y="378.0" />
-      <point x="383.421" y="378.0" />
-      <point x="4.5567171406446505E-4" y="-204.00042240913285" />
-    </edge>
-    <edge source="model.Staff" target="model.Person" relationship="GENERALIZATION">
-      <point x="-110.0" y="0.0" />
-      <point x="82.0" y="0.0" />
-    </edge>
-    <edge source="model.MusicDisc" target="model.Product" relationship="GENERALIZATION">
-      <point x="4.219357368384635E-4" y="-116.0001849306441" />
-      <point x="36.61" y="378.0" />
-      <point x="383.421" y="378.0" />
-      <point x="4.5567171406446505E-4" y="-204.00042240913285" />
-    </edge>
-    <edge source="model.Book" target="model.Product" relationship="GENERALIZATION">
-      <point x="4.5568189518085944E-4" y="115.99979333008618" />
-      <point x="72.969" y="378.0" />
-      <point x="383.421" y="378.0" />
-      <point x="4.5567171406446505E-4" y="-204.00042240913285" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Compact" zoom="0.46634615384615385" showDependencies="false" x="1284.878306615378" y="524.47345539899" />
-  <SelectedNodes>
-    <node>model.Staff</node>
-  </SelectedNodes>
+  <edges />
+  <settings layout="Hierarchic Compact" zoom="0.7450580596923828" showDependencies="false" x="519.7113832200654" y="-696.2464558288945" />
+  <SelectedNodes />
   <Categories>
-    <Category>Constructors</Category>
     <Category>Fields</Category>
-    <Category>Methods</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

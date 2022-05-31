@@ -15,15 +15,21 @@ public class Menu {
         int option = 0;
         Store store = tClass.equals(Book.class) ? warehouse.getBookStore() : tClass.equals(MusicDisc.class) ? warehouse.getMusicDiscStore() : warehouse.getMovieDiscStore();
         List<Product> list = store.getList();
-        while (option != 5) {
+        while (option != 7) {
             System.out.println("\n\n----------\n\n");
             System.out.println("1. Show All");
             System.out.println("2. Add");
             System.out.println("3. Find by name");
             System.out.println("4. Find by index");
-            System.out.println("5. Return");
+            System.out.println("5. Find and delete by name");
+            System.out.println("6. Find and delete by index");
+            System.out.println("7. Return");
             System.out.print("Select: ");
-            option = Integer.parseInt(scanner.nextLine());
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (Exception e) {
+                option = 0;
+            }
             switch (option) {
                 case 1 -> {
                     if (list == null || list.size() == 0) {
@@ -34,7 +40,8 @@ public class Menu {
                     System.out.print("Please enter something to continue: ");
                     scanner.nextLine();
                 }
-                case 2 -> list.add(tClass.equals(Book.class) ? new Book(scanner) : tClass.equals(MusicDisc.class) ? new MusicDisc(scanner) : new MovieDisc(scanner));
+                case 2 ->
+                        list.add(tClass.equals(Book.class) ? new Book(scanner) : tClass.equals(MusicDisc.class) ? new MusicDisc(scanner) : new MovieDisc(scanner));
                 case 3 -> {
                     System.out.print("Name: ");
                     List<Product> result = store.find(scanner.nextLine().trim());
@@ -45,10 +52,35 @@ public class Menu {
                 case 4 -> {
                     System.out.println("Index: ");
                     List<Product> result = new ArrayList<>();
-                    result.add(store.find(Integer.parseInt(scanner.nextLine().trim())));
+                    Product temp = store.find(Integer.parseInt(scanner.nextLine().trim()));
+                    if (temp != null) {
+                        result.add(temp);
+                    }
                     printTable(tClass, result);
                     System.out.print("Please enter something to continue: ");
                     scanner.nextLine();
+                }
+                case 5 -> {
+                    System.out.print("Name: ");
+                    List<Product> result = store.find(scanner.nextLine().trim());
+                    printTable(tClass, result);
+                    System.out.print("Confirm delete(Y/n): ");
+                    if (!scanner.nextLine().toLowerCase().trim().equals("n")) {
+                        result.forEach(store::delete);
+                    }
+                }
+                case 6 -> {
+                    System.out.println("Index: ");
+                    List<Product> result = new ArrayList<>();
+                    Product temp = store.find(Integer.parseInt(scanner.nextLine().trim()));
+                    if (temp != null) {
+                        result.add(temp);
+                    }
+                    printTable(tClass, result);
+                    System.out.print("Confirm delete(Y/n): ");
+                    if (!scanner.nextLine().toLowerCase().trim().equals("n")) {
+                        result.forEach(store::delete);
+                    }
                 }
                 default -> System.out.println("Invalid option!!!");
             }
@@ -62,7 +94,11 @@ public class Menu {
             System.out.println("1. Warehouse");
             System.out.println("4. Exit");
             System.out.print("Select: ");
-            option = Integer.parseInt(scanner.nextLine());
+            try {
+                option = Integer.parseInt(scanner.nextLine());
+            } catch (Exception e) {
+                option = 0;
+            }
             switch (option) {
                 case 1 -> {
                     while (option != 4) {
@@ -72,7 +108,11 @@ public class Menu {
                         System.out.println("3. Music Disc");
                         System.out.println("4. Return");
                         System.out.print("Select: ");
-                        option = Integer.parseInt(scanner.nextLine());
+                        try {
+                            option = Integer.parseInt(scanner.nextLine());
+                        } catch (Exception e) {
+                            option = 0;
+                        }
                         switch (option) {
                             case 1 -> Menu.showProductMenu(Book.class);
                             case 2 -> Menu.showProductMenu(MovieDisc.class);

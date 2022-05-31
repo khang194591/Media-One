@@ -17,7 +17,6 @@ public class Store {
         } else if (MusicDisc.class.isAssignableFrom(tClass)) {
             list = IOFile.readFormFile("data/musicDisc.txt");
         }
-        System.out.println(list);
     }
 
     public List<Product> find(String name) {
@@ -34,8 +33,7 @@ public class Store {
     public Product find(int index) {
         int i = 0;
         for (Product item : list) {
-            i++;
-            if (i == index) {
+            if (i++ == index) {
                 return item;
             }
         }

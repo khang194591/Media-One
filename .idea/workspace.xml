@@ -4,32 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24f59d5-682b-4f42-acd8-48c5ab8694f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/intellij-javadocs-4.0.1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/book.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/movieDisc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/musicDisc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media-one.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/io/IOFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/MovieDisc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/MusicDisc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Rank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Staff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/Warehouse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/Menu.java" afterDir="false" />
+    <list default="true" id="b24f59d5-682b-4f42-acd8-48c5ab8694f1" name="Changes" comment="Commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/book.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diagram.uml" beforeDir="false" afterPath="$PROJECT_DIR$/src/diagram.uml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/Khang/Desktop/media-one/src",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Khang/Desktop/media-one/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Khang\Desktop\media-one\src\model" />
@@ -120,8 +100,18 @@
       <workItem from="1653823960728" duration="1838000" />
       <workItem from="1653839425880" duration="3539000" />
       <workItem from="1653894467832" duration="6907000" />
-      <workItem from="1653916246751" duration="4414000" />
+      <workItem from="1653916246751" duration="5420000" />
+      <workItem from="1653962942880" duration="395000" />
+      <workItem from="1653964704761" duration="1716000" />
     </task>
+    <task id="LOCAL-00001" summary="Commit">
+      <created>1653923533711</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653923533711</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +130,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
