@@ -1,21 +1,26 @@
 package model;
 
+import io.IO;
 import io.IOFile;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
+import model.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Store {
     private int totalQuantity;
-    private List<Product> list;
+    private final List<Product> list = new ArrayList<>();
 
     public Store(Class tClass) {
         if (Book.class.isAssignableFrom(tClass)) {
-            list = IOFile.readFormFile("data/book.txt");
+            IOFile.readFormFile("data/book.txt").forEach(item -> list.add((Product) item));
         } else if (MovieDisc.class.isAssignableFrom(tClass)) {
-            list = IOFile.readFormFile("data/movieDisc.txt");
+            IOFile.readFormFile("data/movieDisc.txt").forEach(item -> list.add((Product) item));
         } else if (MusicDisc.class.isAssignableFrom(tClass)) {
-            list = IOFile.readFormFile("data/musicDisc.txt");
+            IOFile.readFormFile("data/musicDisc.txt").forEach(item -> list.add((Product) item));
         }
     }
 

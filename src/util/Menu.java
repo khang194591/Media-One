@@ -1,9 +1,16 @@
 package util;
 
+import io.IO;
 import io.IOFile;
 import model.*;
+import model.person.Staff;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
+import model.product.Product;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -40,8 +47,12 @@ public class Menu {
                     System.out.print("Please enter something to continue: ");
                     scanner.nextLine();
                 }
-                case 2 ->
-                        list.add(tClass.equals(Book.class) ? new Book(scanner) : tClass.equals(MusicDisc.class) ? new MusicDisc(scanner) : new MovieDisc(scanner));
+                case 2 -> {
+                    if (list == null) {
+                        list = new ArrayList<>();
+                    }
+                    list.add(tClass.equals(Book.class) ? new Book(scanner) : tClass.equals(MusicDisc.class) ? new MusicDisc(scanner) : new MovieDisc(scanner));
+                }
                 case 3 -> {
                     System.out.print("Name: ");
                     List<Product> result = store.find(scanner.nextLine().trim());
@@ -128,12 +139,12 @@ public class Menu {
                 case 3 -> System.out.println("3 In development");
                 case 4 -> {
                     try {
-                        IOFile.writeToFile("data/book.txt", warehouse.getBookStore().getList());
-                        IOFile.writeToFile("data/musicDisc.txt", warehouse.getMusicDiscStore().getList());
-                        IOFile.writeToFile("data/movieDisc.txt", warehouse.getMovieDiscStore().getList());
+                        IOFile.writeToFile("data/book.txt", new ArrayList<>(warehouse.getBookStore().getList()));
+                        IOFile.writeToFile("data/musicDisc.txt", new ArrayList<>(warehouse.getMusicDiscStore().getList()));
+                        IOFile.writeToFile("data/movieDisc.txt", new ArrayList<>(warehouse.getMovieDiscStore().getList()));
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("Fail to saved data");
+                        System.out.println("Failed to save data");
                     }
                 }
                 default -> System.out.println("Invalid option!!!");

@@ -1,5 +1,7 @@
 package model;
 
+import model.product.Product;
+
 public class CartItem {
     private Product product;
     private int quantity;        // Luon phai >= 0

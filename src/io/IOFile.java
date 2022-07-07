@@ -1,27 +1,24 @@
 package io;
 
-import model.Product;
+import model.product.Product;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class IOFile {
-    static public void writeToFile(String path, List<Product> list) throws Exception {
+    static public void writeToFile(String path, List<IO> list) throws Exception {
         FileOutputStream fos = new FileOutputStream(path);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(list);
         oos.close();
     }
 
-    static public List<Product> readFormFile(String path) {
+    static public List<IO> readFormFile(String path) {
         try {
             FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            List<Product> list = (List<Product>) ois.readObject();
+            List<IO> list = (List<IO>) ois.readObject();
             ois.close();
             return list;
         } catch (Exception e) {

@@ -1,10 +1,12 @@
-package model;
+package model.product;
+
+import io.IO;
 
 import java.io.Serializable;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class Product implements Serializable {
+public class Product implements Serializable, IO {
     // Mã sản phẩm
     protected String code;
     // Tên sản phẩm

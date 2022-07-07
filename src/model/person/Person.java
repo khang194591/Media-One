@@ -1,8 +1,10 @@
-package model;
+package model.person;
+
+import io.IO;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+public class Person implements Serializable, IO {
     private String name;
     private int age;
 

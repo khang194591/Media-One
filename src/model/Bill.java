@@ -1,5 +1,8 @@
 package model;
 
+import model.person.Customer;
+import model.person.Staff;
+
 import java.util.*;
 
 

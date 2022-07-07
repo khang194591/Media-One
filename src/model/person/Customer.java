@@ -1,4 +1,6 @@
-package model;
+package model.person;
+
+import model.Rank;
 
 public class Customer {
     public int totalPurchasedTimes;
