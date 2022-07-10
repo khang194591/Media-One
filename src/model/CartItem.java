@@ -1,12 +1,12 @@
 package model;
 
-import model.product.Product;
+import java.io.Serializable;
 
-public class CartItem {
+public class CartItem implements Serializable {
     private Product product;
     private int quantity;        // Luon phai >= 0
     private double unitPrice;    // Luon phai >= 0
-    private double allPrice;    // Luon phai >= 0 - khong co phuong thuc set
+//    private double allPrice;    // Luon phai >= 0 - khong co phuong thuc set
 
     public CartItem(Product product, int quantity, double unitPrice) {
         this.product = product;
@@ -39,13 +39,12 @@ public class CartItem {
         else unitPrice = price;
     }
 
-    // Khong co setAllPrice
     public double getAllPrice() {
-        return unitPrice * quantity;
+        return this.unitPrice * this.quantity;
     }
 
     public void showInfor() {
         //product.showInfor();
-        System.out.println("CartItem: " + quantity + ", " + unitPrice);
+        System.out.println("CartItem| " + "name: " + product.name + "| " + "Quantity: " + quantity + "| " + "Unit price: " + unitPrice);
     }
 }

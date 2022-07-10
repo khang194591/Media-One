@@ -1,20 +1,21 @@
 package model;
 
-import model.person.Customer;
 import model.person.Staff;
 
+import java.io.Serializable;
 import java.util.*;
 
 
-public class Bill {
+public class Bill implements Serializable {
     private final List<CartItem> listCart;
     private String code;
     private int qtyOrdered;
     private Date dateBuy;
     private Customer customer;
     private Staff staff;
-    private double discount;   // giam gia neu khong co = 0
-    private double totalMoney; // tong tien
+    private double discount;   // default = 0
+
+    private double totalMoney;
 
     public Bill(Staff staff, Customer customer) {
         // random code
@@ -39,12 +40,20 @@ public class Bill {
         return qtyOrdered;
     }
 
-    public void setQtyOrdered(int qty) {
-        qtyOrdered = Math.max(qty, 0);
-    }
+    public void setQtyOrdered(int qty) {qtyOrdered = Math.max(qty, 0);}
 
     public Date getDateBuy() {
         return dateBuy;
+    }
+    public int getMonth() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dateBuy);
+        return cal.get(Calendar.MONTH + 1);
+    }
+    public int getYear() {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(dateBuy);
+        return cal.get(Calendar.YEAR);
     }
 
     public void setDateBuy(Date date) {
@@ -80,7 +89,6 @@ public class Bill {
     public boolean addCartItem(CartItem item) {
         qtyOrdered += item.getQuantity();
         return listCart.add(item);
-
     }
 
     //remove
@@ -98,7 +106,8 @@ public class Bill {
         for (CartItem cartItem : listCart) {
             total += cartItem.getAllPrice();
         }
-        return total;
+        totalMoney = total - total * discount;
+        return totalMoney;
     }
     // Can kiem tra Class nay
 
@@ -110,5 +119,19 @@ public class Bill {
             CartItem cart = (CartItem) i.next();
             cart.showInfor();
         }
+        System.out.println("Total money: " + totalCost());
+    }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "code='" + code + '\'' +
+                ", qtyOrdered=" + qtyOrdered +
+                ", dateBuy=" + dateBuy +
+                ", customer=" + customer +
+                ", staff=" + staff.getName() + "\n" +
+                ", discount=" + discount +
+                ", totalMoney=" + totalCost() +
+                '}';
     }
 }

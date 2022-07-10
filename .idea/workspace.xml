@@ -1,95 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b24f59d5-682b-4f42-acd8-48c5ab8694f1" name="Changes" comment="Commit">
-      <change afterPath="$PROJECT_DIR$/src/io/IO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/book.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/book.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/movieDisc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/movieDisc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/IOFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/IOFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/person/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MovieDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/MovieDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MusicDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/MusicDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/person/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Warehouse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Menu.java" afterDir="false" />
-    </list>
+    <list default="true" id="7967257a-626b-45b7-9394-c9998f0a2cde" name="Changes" comment="update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-        <option value="Interface" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/data/book.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/data/movieDisc.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/data/musicDisc.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/io/IOFile.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/model/Store.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/model/Warehouse.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/model/product/MovieDisc.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/model/product/MusicDisc.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/util/Menu.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="29kdXK6cNEuK1NE33LBV4ac5EXE" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2Bkt3cxXKHeWV28k9r22TZgU59E" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/khang/Desktop/Mars4_5&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Khang/Desktop/Github",
+    "settings.editor.selected.configurable": "AtomConfig"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Khang\Desktop\media-one\src\model" />
-      <recent name="C:\Users\Khang\Desktop\media-one\src\io" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.Main">
+}]]></component>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="media-one" />
@@ -97,47 +40,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Mars4_5.jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/src/Mars4_5.jar" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JAR Application.Mars4_5.jar" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b24f59d5-682b-4f42-acd8-48c5ab8694f1" name="Changes" comment="" />
-      <created>1653661060865</created>
+      <changelist id="7967257a-626b-45b7-9394-c9998f0a2cde" name="Changes" comment="" />
+      <created>1657461716583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653661060865</updated>
-      <workItem from="1653661060868" duration="3596000" />
-      <workItem from="1653668283696" duration="2022000" />
-      <workItem from="1653707974534" duration="6052000" />
-      <workItem from="1653823960728" duration="1838000" />
-      <workItem from="1653839425880" duration="3539000" />
-      <workItem from="1653894467832" duration="6907000" />
-      <workItem from="1653916246751" duration="5420000" />
-      <workItem from="1653962942880" duration="395000" />
-      <workItem from="1653964704761" duration="1716000" />
-      <workItem from="1657112101255" duration="2040000" />
-      <workItem from="1657118576326" duration="83000" />
-      <workItem from="1657119190749" duration="18000" />
-      <workItem from="1657154823677" duration="2685000" />
-      <workItem from="1657158361131" duration="995000" />
-      <workItem from="1657159628928" duration="7000" />
+      <updated>1657461716583</updated>
+      <workItem from="1657461723562" duration="94000" />
+      <workItem from="1657464218786" duration="5837000" />
     </task>
-    <task id="LOCAL-00001" summary="Commit">
-      <created>1653923533711</created>
+    <task id="LOCAL-00001" summary="update">
+      <created>1657470028808</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1653923533711</updated>
+      <updated>1657470028808</updated>
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
@@ -150,19 +75,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="khang" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
 </project>

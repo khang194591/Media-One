@@ -1,26 +1,22 @@
 package model;
 
-import io.IO;
 import io.IOFile;
-import model.product.Book;
-import model.product.MovieDisc;
-import model.product.MusicDisc;
-import model.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Store {
     private int totalQuantity;
-    private final List<Product> list = new ArrayList<>();
+    private List<Product> list;
 
     public Store(Class tClass) {
         if (Book.class.isAssignableFrom(tClass)) {
-            IOFile.readFormFile("data/book.txt").forEach(item -> list.add((Product) item));
+            list = (List<Product>) IOFile.readFormFile("data/book.txt");
         } else if (MovieDisc.class.isAssignableFrom(tClass)) {
-            IOFile.readFormFile("data/movieDisc.txt").forEach(item -> list.add((Product) item));
+            list = (List<Product>) IOFile.readFormFile("data/movieDisc.txt");
         } else if (MusicDisc.class.isAssignableFrom(tClass)) {
-            IOFile.readFormFile("data/musicDisc.txt").forEach(item -> list.add((Product) item));
+            list = (List<Product>) IOFile.readFormFile("data/musicDisc.txt");
         }
     }
 
@@ -48,7 +44,10 @@ public class Store {
     public void add(Product product) {
         totalQuantity += product.getQuantity();
         list.add(product);
+        System.out.println("TotalQuantity: " + totalQuantity);
     }
+
+
 
     public void delete(Product product) {
         list.remove(product);
@@ -60,6 +59,10 @@ public class Store {
 
     public int getTotalQuantity() {
         return totalQuantity;
+    }
+
+    public void setProduct(int index, Product product) {
+         list.set(index, product);
     }
 
     public List<Product> getList() {

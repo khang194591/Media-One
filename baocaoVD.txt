@@ -1,0 +1,17 @@
+Báo cáo:
+- yêu cầu đề bài 
+- Các chức năng
+- Biểu đồ UML
+- Ảnh giao diện
+
+Các chức năng chưa làm:
+- Vẽ biểu đồ dựa trên doanh số theo tháng, theo năm
+- Khách hàng xem lại các bill đã mua của mình
+- Tìm kiếm staff -> add staff vào bill
+
+Bug:
+- Tìm kiếm theo tên chưa chuẩn
+- không nhập tên và tuổi khách hàng mà nhấn enter cũng qua
+- không có đơn hàng trong bill vẫn thanh toán
+- lương tháng có thể trả nhiều lần -> thừa
+- chưa có đơn nhập hàng với bên provider
