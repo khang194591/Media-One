@@ -114,12 +114,12 @@ public class Bill implements Serializable {
     public void showInfor() {
         Iterator<CartItem> i = listCart.iterator();
         //System.out.println("Bill Inforamtion:" );
-        System.out.println("Bill code: " + code);
+        System.out.println("Mã hóa đơn: " + code);
         while (i.hasNext()) {
             CartItem cart = (CartItem) i.next();
-            cart.showInfor();
+            cart.showInfo();
         }
-        System.out.println("Total money: " + totalCost());
+        System.out.println("Tổng tiền: " + totalCost());
     }
 
     @Override

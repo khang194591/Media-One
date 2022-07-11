@@ -1,14 +1,14 @@
 package model.product;
 
-import io.IO;
-
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.UUID;
 
-public class Product implements Serializable, IO {
+public class Product implements Serializable {
     // Mã sản phẩm
     protected String code;
+
     // Tên sản phẩm
     protected String name;
     // Số lượng sản phẩm
@@ -77,5 +77,25 @@ public class Product implements Serializable, IO {
     @Override
     public String toString() {
         return String.format(" %40s | %40s | %10d | %10.2f | %10.2f |", code, name, quantity, importPrice, sellPrice);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return quantity == product.quantity && Double.compare(product.sellPrice, sellPrice) == 0 && Double.compare(product.importPrice, importPrice) == 0 && code.equals(product.code) && name.equals(product.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code, name, quantity, sellPrice, importPrice);
+    }
+
+    public boolean equalsName(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return name.equals(product.name);
     }
 }

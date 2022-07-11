@@ -1,6 +1,10 @@
 package model.person;
 
 import model.*;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
+import model.product.Product;
 import util.Menu;
 
 import java.util.*;
@@ -17,6 +21,9 @@ public class Manager extends Person {
 
     public void addProduct() {
         Class tClass = Menu.selectProductType(); // book or movie or music disc
+        if (tClass == null) {
+            return;
+        }
         Store store = warehouse.getStoreByType(tClass);
         boolean flag = true;
         List<Product> list = store.getList();

@@ -1,10 +1,13 @@
 package model;
 
 import io.IOFile;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
+import model.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class Store {
     private int totalQuantity;
@@ -44,7 +47,7 @@ public class Store {
     public void add(Product product) {
         totalQuantity += product.getQuantity();
         list.add(product);
-        System.out.println("TotalQuantity: " + totalQuantity);
+        System.out.println("Tổng số lượng: " + totalQuantity);
     }
 
 

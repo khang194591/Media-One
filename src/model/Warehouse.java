@@ -2,6 +2,9 @@ package model;
 
 import io.IOFile;
 import model.person.Staff;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
 
 import java.util.ArrayList;
 import java.util.List;

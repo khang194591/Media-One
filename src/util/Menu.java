@@ -5,6 +5,10 @@ import model.*;
 import model.person.Manager;
 import model.person.Person;
 import model.person.Staff;
+import model.product.Book;
+import model.product.MovieDisc;
+import model.product.MusicDisc;
+import model.product.Product;
 
 import java.util.Date;
 import java.util.List;
@@ -76,9 +80,9 @@ public class Menu {
         int option = 0;
         while (option != 3) {
             System.out.println("\n----------\n");
-            System.out.println("1. Create new bill");
-            System.out.println("2. Report fees incurred");
-            System.out.println("3. Return!");
+            System.out.println("1. Tạo hóa đơn mới");
+            System.out.println("2. Phí phát sinh");
+            System.out.println("3. Quay lại!");
             System.out.print("Lựa chọn:");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -90,7 +94,7 @@ public class Menu {
                     creatBill();
                 }
                 case 2 -> {
-                    System.out.println("Report fees incurred.");
+                    System.out.println("Phí phát sinh.");
                     reportIncurred();
                 }
                 case 3 -> {
@@ -113,19 +117,19 @@ public class Menu {
         CartItem newCart;
         Product newProduct;
         int quantity;
-        System.out.println("Information of customer");
+        System.out.println("Thông tin khách hàng");
         newCustomer = new Customer(scanner);
-        System.out.println("Name: " + newCustomer.getName());
+        System.out.println("Tên khách hàng: " + newCustomer.getName());
         // creat new bill
         newBill = new Bill(staff, newCustomer);
-        while (option != 6 || option != 5) {
+        while (true) {
             System.out.println("\n\n----------\n\n");
-            System.out.println("1. Show All products");
-            System.out.println("2. Find product");
-            System.out.println("3. Add product to bill");
-            System.out.println("4. Review Bill");
-            System.out.println("5. Pay the bill");
-            System.out.println("6. Delete the bill");
+            System.out.println("1. Hiện thị tất cả sản phẩm");
+            System.out.println("2. Tìm kiếm sản phẩm");
+            System.out.println("3. Thêm sản phẩm vào hóa đơn");
+            System.out.println("4. Xem lại hóa đơn");
+            System.out.println("5. Thanh toán hóa đơn");
+            System.out.println("6. Hủy hóa đơn");
             System.out.print("Lựa chọn:");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -146,23 +150,22 @@ public class Menu {
                     type = selectProductType();
                     newProduct = findOneProductByName(type);
                     if (newProduct == null) break;
-                    System.out.print("Quantity: ");
+                    System.out.print("Số lượng: ");
                     quantity = Integer.parseInt(scanner.nextLine().trim());
                     newCart = new CartItem(newProduct, quantity, newProduct.getSellPrice());
                     newBill.addCartItem(newCart);
                 }
                 case 4 -> {
-                    System.out.println("Review bill");
+                    System.out.println("Xem lại hóa đơn");
                     newBill.showInfor();
                 }
                 case 5 -> {
-                    System.out.println("Pay the bill");
+                    System.out.println("Thanh toán hóa đơn");
                     warehouse.addListBill(newBill);
                     return;
                 }
                 case 6 -> {
-                    System.out.println("Delete the bill");
-                    newBill = null;
+                    System.out.println("Hủy hóa đơn");
                     return;
                 }
                 default -> {
@@ -184,13 +187,13 @@ public class Menu {
         System.out.print("Nội dung miêu tả (thông tin phí, số lượng): ");
         description = scanner.nextLine().trim();
         System.out.println("Ngày tháng năm: " + date);
-        System.out.print("Confirm report(Y/n): ");
+        System.out.print("Xác nhận(Y/n): ");
         if (scanner.nextLine().toLowerCase().trim().equals("y")) {
             newFee = new NonFixedFee(title, description, totalMoney, date);
             newFee.show();
             warehouse.addNonFixedFee(newFee);
         } else {
-            System.out.print("Confirm don't report! Delete report!");
+            System.out.print("Xác nhận hủy!");
             newFee = null;
         }
     }// end func
@@ -199,13 +202,13 @@ public class Menu {
         int option = 0;
         while (option != 7) {
             System.out.println("\n----------\n");
-            System.out.println("1. Manage products");
-            System.out.println("2. Manage staffs");
-            System.out.println("3. Revenue statistics");
-            System.out.println("4. View Non-Fixed Fee");
-            System.out.println("5. View maintenance Fee");
-            System.out.println("6. Show Bill");
-            System.out.println("7. Return!");
+            System.out.println("1. Quản lý sản phẩm");
+            System.out.println("2. Quản lý nhân viên");
+            System.out.println("3. Thống kê doanh thu");
+            System.out.println("4. Xem phí không cố định");
+            System.out.println("5. Xem phí duy trì");
+            System.out.println("6. Danh sách hóa đơn");
+            System.out.println("7. Quay lại!");
             System.out.print("Lựa chọn:");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -223,19 +226,19 @@ public class Menu {
                     revenueStatistics();
                 }
                 case 4 -> {
-                    System.out.println("Non-fixed Fee");
+                    System.out.println("Phí không cố định");
                     for (Fee item : warehouse.getListNonFixedFee()) {
                         System.out.println("" + item);
                     }
                 }
                 case 5 -> {
-                    System.out.println("Maintenance Fee");
+                    System.out.println("Phí cố định");
                     for (Fee item : warehouse.getListMaintenanceFee()) {
                         System.out.println("" + item);
                     }
                 }
                 case 6 -> {
-                    System.out.println("Show bill");
+                    System.out.println("Hiện thị danh sách hóa đơn");
                     warehouse.showAllBill();
                 }
                 case 7 -> {
@@ -253,11 +256,11 @@ public class Menu {
         Manager user = (Manager) Menu.user;
         while (option != 5) {
             System.out.println("\n----------\n");
-            System.out.println("1. Add product");
-            System.out.println("2. Remove product");
-            System.out.println("3. Set product");
-            System.out.println("4. Show product");
-            System.out.println("5. Return");
+            System.out.println("1. Thêm sản phẩm");
+            System.out.println("2. Xóa sản phẩm");
+            System.out.println("3. Sửa thông tin sản phẩm");
+            System.out.println("4. Danh sách sản phẩm");
+            System.out.println("5. Quay lại");
             System.out.print("Lựa chọn: ");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -278,6 +281,7 @@ public class Menu {
                     user.showProduct();
                     break;
                 case 5:
+                    break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ!!!");
             }
@@ -289,11 +293,11 @@ public class Menu {
         Manager manager = (Manager) user;
         while (option != 5) {
             System.out.println("\n----------\n");
-            System.out.println("1. Add staff");
-            System.out.println("2. Update information of staff");
-            System.out.println("3. Show staffs");
-            System.out.println("4. Pay wage");
-            System.out.println("5. Return ");
+            System.out.println("1. Thêm nhân viên");
+            System.out.println("2. Cập nhật thông tin nhân viên");
+            System.out.println("3. Danh sách nhân viên");
+            System.out.println("4. Thanh toán lương");
+            System.out.println("5. Quay lại");
             System.out.print("Lựa chọn: ");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -335,9 +339,9 @@ public class Menu {
         int startMonth, startYear, endMonth, endYear;
         while (option != 3) {
             System.out.println("\n----------\n");
-            System.out.println("1. By month");
-            System.out.println("2. By year");
-            System.out.println("3. Return");
+            System.out.println("1. Theo tháng");
+            System.out.println("2. Theo năm");
+            System.out.println("3. Quay lại");
             System.out.print("Lựa chọn: ");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -346,25 +350,25 @@ public class Menu {
             }
             switch (option) {
                 case 1:
-                    System.out.print("Input start month: ");
+                    System.out.print("Tháng bắt đầu: ");
                     startMonth = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Input start year: ");
+                    System.out.print("Năm bắt đầu: ");
                     startYear = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Input end month: ");
+                    System.out.print("Tháng kết thúc: ");
                     endMonth = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Input end year: ");
+                    System.out.print("Năm kết thúc: ");
                     endYear = Integer.parseInt(scanner.nextLine().trim());
                     warehouse.revenueStatistics(startMonth, startYear, endMonth, endYear);
                     break;
                 case 2:
-                    System.out.print("Input start year: ");
+                    System.out.print("Năm bắt đầu: ");
                     startYear = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Input end year: ");
+                    System.out.print("Năm kết thúc: ");
                     endYear = Integer.parseInt(scanner.nextLine().trim());
                     warehouse.revenueStatistics(0, startYear, 0, endYear);
                     break;
                 case 3:
-                    return;
+                    break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ!!!");
             }
@@ -374,12 +378,12 @@ public class Menu {
 
     static public Class selectProductType() {
         int option = 0;
-        while (option != 4) {
+        while (true) {
             System.out.println("\n\n----------\n\n");
-            System.out.println("1. Book");
-            System.out.println("2. Movie Disc");
-            System.out.println("3. Music Disc");
-            System.out.println("4. Return");
+            System.out.println("1. Sách");
+            System.out.println("2. Đĩa phim");
+            System.out.println("3. Đĩa nhạc");
+            System.out.println("4. Quay lại");
             System.out.print("Lựa chọn: ");
             try {
                 option = Integer.parseInt(scanner.nextLine());
@@ -399,12 +403,10 @@ public class Menu {
                     System.out.println("Lựa chọn không hợp lệ!!!");
             }
         }
-        return null;
     }
 
     private static Store getStoreProduct(Class tClass) {
-        Store store = tClass.equals(Book.class) ? warehouse.getBookStore() : tClass.equals(MusicDisc.class) ? warehouse.getMusicDiscStore() : tClass.equals(MovieDisc.class) ? warehouse.getMovieDiscStore() : null;
-        return store;
+        return tClass.equals(Book.class) ? warehouse.getBookStore() : tClass.equals(MusicDisc.class) ? warehouse.getMusicDiscStore() : tClass.equals(MovieDisc.class) ? warehouse.getMovieDiscStore() : null;
     }
 
     private static void showProducts(Class tClass) {
@@ -412,11 +414,11 @@ public class Menu {
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
         if (list == null || list.size() == 0) {
-            System.out.println("Empty, please add more!!!");
+            System.out.println("Rỗng, vui lòng thêm!!!");
         } else {
             printTable(tClass, list);
         }
-        System.out.print("Please enter something to continue: ");
+        System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();
     }
 
@@ -424,10 +426,10 @@ public class Menu {
         if (tClass == null) return;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        System.out.print("Name: ");
+        System.out.print("Tên sản phẩm: ");
         List<Product> result = store.find(scanner.nextLine().trim());
         printTable(tClass, result);
-        System.out.print("Please enter something to continue: ");
+        System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();
     }
 
@@ -435,7 +437,7 @@ public class Menu {
         if (tClass == null) return null;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        System.out.print("Name: ");
+        System.out.print("Tên: ");
         List<Product> result = store.find(scanner.nextLine().trim());
         System.out.println("" + result.get(0));
         if (result.size() == 0) return null;
@@ -449,13 +451,13 @@ public class Menu {
         System.out.print("Index: ");
         List<Product> result = store.find(scanner.nextLine().trim());
         printTable(tClass, result);
-        System.out.print("Please enter something to continue: ");
+        System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();
     }
 
     public static void printTable(Class tClass, List<Product> result) {
         if (result == null || result.size() == 0) {
-            System.out.println("Empty, please add more!!!");
+            System.out.println("Rỗng, vui lòng nhập thêm!!!");
             return;
         }
         if (tClass.equals(Book.class)) {

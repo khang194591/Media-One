@@ -1,5 +1,7 @@
 package model;
 
+import model.product.Product;
+
 import java.io.Serializable;
 
 public class CartItem implements Serializable {
@@ -26,7 +28,7 @@ public class CartItem implements Serializable {
         return quantity;
     }
 
-    public void setQuantiy(int quan) {
+    public void setQuantity(int quan) {
         quantity = Math.max(quan, 0);
     }
 
@@ -43,8 +45,7 @@ public class CartItem implements Serializable {
         return this.unitPrice * this.quantity;
     }
 
-    public void showInfor() {
-        //product.showInfor();
-        System.out.println("CartItem| " + "name: " + product.name + "| " + "Quantity: " + quantity + "| " + "Unit price: " + unitPrice);
+    public void showInfo() {
+        System.out.println("CartItem| " + "name: " + product.getName() + "| " + "Quantity: " + quantity + "| " + "Unit price: " + unitPrice);
     }
 }

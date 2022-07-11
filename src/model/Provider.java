@@ -1,5 +1,7 @@
 package model;
 
+import model.product.Product;
+
 import java.util.List;
 
 public class Provider {
