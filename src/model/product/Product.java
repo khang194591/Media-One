@@ -1,5 +1,7 @@
 package model.product;
 
+import io.IO;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
@@ -20,14 +22,10 @@ public class Product implements Serializable {
 
     public Product(Scanner scanner) {
         code = UUID.randomUUID().toString();
-        System.out.print("Tên sản phẩm: ");
-        name = scanner.nextLine().trim();
-        System.out.print("Số lượng: ");
-        quantity = Integer.parseInt(scanner.nextLine().trim());
-        System.out.print("Giá nhập: ");
-        importPrice = Double.parseDouble(scanner.nextLine().trim());
-        System.out.print("Giá bán: ");
-        sellPrice = Double.parseDouble(scanner.nextLine().trim());
+        name = IO.getString(scanner, "", "Tên sản phẩm: ");
+        quantity = Integer.parseInt(IO.getString(scanner, "", "Số lượng: "));
+        importPrice = Double.parseDouble(IO.getString(scanner, "", "Giá nhập: "));
+        sellPrice = Double.parseDouble(IO.getString(scanner, "", "Giá bán: "));
     }
 
     public Product(String name, int quantity, double sellPrice, double importPrice) {

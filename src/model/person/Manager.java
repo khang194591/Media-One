@@ -1,5 +1,6 @@
 package model.person;
 
+import io.IO;
 import model.*;
 import model.product.Book;
 import model.product.MovieDisc;
@@ -66,8 +67,7 @@ public class Manager extends Person {
         Class tClass = Menu.selectProductType(); // book or movie or music disc
         Store store = warehouse.getStoreByType(tClass);
 
-        System.out.print("Delete product by Name: ");
-        List<Product> result = store.find(scanner.nextLine().trim());
+        List<Product> result = store.find(IO.getString(scanner, "", "Nhập tên sản phẩm muốn xóa: "));
         Menu.printTable(tClass, result);
         System.out.print("Confirm delete(Y/n): ");
         if (scanner.nextLine().toLowerCase().trim().equals("y")) {
@@ -127,16 +127,12 @@ public class Manager extends Person {
         Staff newStaff;
         System.out.print("Index of staff:");
         int index = Integer.parseInt(scanner.nextLine());
-        System.out.print("Tên nhân viên: ");
-        String name = scanner.nextLine().trim();
-        System.out.print("Tuổi nhân viên: ");
-        int age = Integer.parseInt(scanner.nextLine());
-        System.out.print("Lương nhân viên: ");
-        double salary = Double.parseDouble(scanner.nextLine());
-        System.out.print("Tên đăng nhập: ");
-        String username = scanner.nextLine().trim();
-        System.out.print("Mật khẩu: ");
-        String password = scanner.nextLine().trim();
+        Staff oldStaff = listStaff.get(index);
+        String name = IO.getString(scanner, oldStaff.getName(), "Tên nhân viên: ");
+        int age = Integer.parseInt(IO.getString(scanner, String.valueOf(oldStaff.getAge()), "Tuổi nhân viên: "));
+        double salary = Double.parseDouble(IO.getString(scanner, String.valueOf(oldStaff.getSalary()), "Lương nhân viên: "));
+        String username = IO.getString(scanner, oldStaff.getUsername(), "Tên đăng nhập: ");
+        String password = IO.getString(scanner, oldStaff.getPassword(), "Mật khẩu: ");
         newStaff = new Staff(name, age, salary, username, password);
         listStaff.set(index, newStaff);
     }
@@ -168,7 +164,7 @@ public class Manager extends Person {
     public void paySalary() {
         Calendar nowDate = Calendar.getInstance();
         System.out.print("Pay salary this month " + (nowDate.get(Calendar.MONTH) + 1) + " (Y/N)?: ");
-        if (scanner.nextLine().trim().toLowerCase().equals("y")) {
+        if (IO.getString(scanner, "", "").toLowerCase().equals("y")) {
             List<Staff> listStaff = warehouse.getListStaff();
             MaintenanceFee newFee;
             String title = "Pay salary month " + (nowDate.get(Calendar.MONTH) + 1);

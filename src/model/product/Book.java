@@ -1,5 +1,7 @@
 package model.product;
 
+import io.IO;
+
 import java.util.Scanner;
 
 public class Book extends Product {
@@ -16,16 +18,11 @@ public class Book extends Product {
 
     public Book(Scanner scanner) {
         super(scanner);
-        System.out.print("Nhà xuất bản: ");
-        publisher = scanner.nextLine().trim();
-        System.out.print("Tác giả: ");
-        author = scanner.nextLine().trim();
-        System.out.print("Mô tả: ");
-        description = scanner.nextLine().trim();
-        System.out.print("Năm xuất bản: ");
-        publishYear = Integer.parseInt(scanner.nextLine().trim());
-        System.out.print("Tái bản: ");
-        republish = scanner.nextLine().trim();
+        publisher = IO.getString(scanner, "", "Nhà xuất bản: ");
+        author = IO.getString(scanner, "", "Tác giả: ");
+        description = IO.getString(scanner, "", "Mô tả: ");
+        publishYear = Integer.parseInt(IO.getString(scanner, "", "Năm xuất bản: "));
+        republish = IO.getString(scanner, "", "Tái bản: ");
     }
 
     public Book(String name, int quantity, double sellPrice, double importPrice, String publisher, String author, String description, int publishYear, String republish) {

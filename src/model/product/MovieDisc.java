@@ -1,5 +1,7 @@
 package model.product;
 
+import io.IO;
+
 import java.util.Scanner;
 
 public class MovieDisc extends Product {
@@ -14,16 +16,11 @@ public class MovieDisc extends Product {
 
     public MovieDisc(Scanner scanner) {
         super(scanner);
-        System.out.print("Nhà sản xuất: ");
-        producer = scanner.nextLine().trim();
-        System.out.print("Đạo diễn: ");
-        director = scanner.nextLine().trim();
-        System.out.print("Thể loại: ");
-        genre = scanner.nextLine().trim();
-        System.out.print("Năm xuất bản: ");
-        publishYear = scanner.nextLine().trim();
-        System.out.print("Diễn viên chính: ");
-        mainActor = scanner.nextLine().trim();
+        producer = IO.getString(scanner, "", "Nhà sản xuất: ");
+        director = IO.getString(scanner, "", "Đạo diễn: ");
+        genre = IO.getString(scanner, "", "Thể loại: ");
+        publishYear = IO.getString(scanner, "", "Năm xuất bản: ");
+        mainActor = IO.getString(scanner, "", "Diễn viên chính: ");
     }
 
     public MovieDisc(String name, int quantity, double sellPrice, double importPrice, String producer, String director, String genre, String publishYear, String mainActor) {

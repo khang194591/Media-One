@@ -37,10 +37,8 @@ public class Menu {
                     String username;
                     String password;
                     System.out.println("\n--------ĐĂNG NHẬP--------\n");
-                    System.out.print("Tên đăng nhập: ");
-                    username = scanner.nextLine().trim();
-                    System.out.print("Mật khẩu: ");
-                    password = scanner.nextLine().trim();
+                    username = IO.getString(scanner, "", "Tên đăng nhập: ");
+                    password = IO.getString(scanner, "", "Mật khẩu: ");
                     if (username.equals("admin") && password.equals("admin")) {
                         user = new Manager("admin", 20, warehouse);
                         managerMenu();
@@ -150,8 +148,7 @@ public class Menu {
                     type = selectProductType();
                     newProduct = findOneProductByName(type);
                     if (newProduct == null) break;
-                    System.out.print("Số lượng: ");
-                    quantity = Integer.parseInt(scanner.nextLine().trim());
+                    quantity = Integer.parseInt(IO.getString(scanner, "", "Số lượng: "));
                     newCart = new CartItem(newProduct, quantity, newProduct.getSellPrice());
                     newBill.addCartItem(newCart);
                 }
@@ -180,12 +177,9 @@ public class Menu {
         Date date = new Date();
         String title, description;
         double totalMoney;
-        System.out.print("Kiểu phí: ");
-        title = scanner.nextLine().trim();
-        System.out.print("Tổng tiền: ");
-        totalMoney = Double.parseDouble(scanner.nextLine().trim());
-        System.out.print("Nội dung miêu tả (thông tin phí, số lượng): ");
-        description = scanner.nextLine().trim();
+        title = IO.getString(scanner, "", "Kiểu phí: ");
+        totalMoney = Double.parseDouble(IO.getString(scanner, "", "Tổng tiền: "));
+        description = IO.getString(scanner, "", "Nội dung miêu tả (thông tin phí, số lượng): ");
         System.out.println("Ngày tháng năm: " + date);
         System.out.print("Xác nhận(Y/n): ");
         if (scanner.nextLine().toLowerCase().trim().equals("y")) {
@@ -306,16 +300,11 @@ public class Menu {
             }
             switch (option) {
                 case 1:
-                    System.out.print("Tên nhân viên: ");
-                    String name = scanner.nextLine().trim();
-                    System.out.print("Tuổi nhân viên: ");
-                    int age = Integer.parseInt(scanner.nextLine());
-                    System.out.print("Lương nhân viên: ");
-                    double salary = Double.parseDouble(scanner.nextLine());
-                    System.out.print("Tên đăng nhập: ");
-                    String username = scanner.nextLine().trim();
-                    System.out.print("Mật khẩu: ");
-                    String password = scanner.nextLine().trim();
+                    String name = IO.getString(scanner, "", "Tên nhân viên: ");
+                    int age = Integer.parseInt(IO.getString(scanner, "", "Tuổi nhân viên: "));
+                    double salary = Double.parseDouble(IO.getString(scanner, "", "Lương nhân viên: "));
+                    String username = IO.getString(scanner, "", "Tên đăng nhập: ");
+                    String password = IO.getString(scanner, "", "Mật khẩu: ");
                     manager.addStaff(name, age, salary, username, password);
                     break;
                 case 2:
@@ -350,21 +339,15 @@ public class Menu {
             }
             switch (option) {
                 case 1:
-                    System.out.print("Tháng bắt đầu: ");
-                    startMonth = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Năm bắt đầu: ");
-                    startYear = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Tháng kết thúc: ");
-                    endMonth = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Năm kết thúc: ");
-                    endYear = Integer.parseInt(scanner.nextLine().trim());
+                    startMonth = Integer.parseInt(IO.getString(scanner, "", "Tháng bắt đầu: "));
+                    startYear = Integer.parseInt(IO.getString(scanner, "", "Năm bắt đầu: "));
+                    endMonth = Integer.parseInt(IO.getString(scanner, "", "Tháng kết thúc: "));
+                    endYear = Integer.parseInt(IO.getString(scanner, "", "Năm kết thúc: "));
                     warehouse.revenueStatistics(startMonth, startYear, endMonth, endYear);
                     break;
                 case 2:
-                    System.out.print("Năm bắt đầu: ");
-                    startYear = Integer.parseInt(scanner.nextLine().trim());
-                    System.out.print("Năm kết thúc: ");
-                    endYear = Integer.parseInt(scanner.nextLine().trim());
+                    startYear = Integer.parseInt(IO.getString(scanner, "", "Năm bắt đầu: "));
+                    endYear = Integer.parseInt(IO.getString(scanner, "", "Năm kết thúc: "));
                     warehouse.revenueStatistics(0, startYear, 0, endYear);
                     break;
                 case 3:
@@ -426,8 +409,7 @@ public class Menu {
         if (tClass == null) return;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        System.out.print("Tên sản phẩm: ");
-        List<Product> result = store.find(scanner.nextLine().trim());
+        List<Product> result = store.find(IO.getString(scanner, "", "Tên sản phẩm: "));
         printTable(tClass, result);
         System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();
@@ -437,8 +419,7 @@ public class Menu {
         if (tClass == null) return null;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        System.out.print("Tên: ");
-        List<Product> result = store.find(scanner.nextLine().trim());
+        List<Product> result = store.find(IO.getString(scanner, "", "Tên sản phẩm: "));
         System.out.println("" + result.get(0));
         if (result.size() == 0) return null;
         return list.get(0);
@@ -448,8 +429,7 @@ public class Menu {
         if (tClass == null) return;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        System.out.print("Index: ");
-        List<Product> result = store.find(scanner.nextLine().trim());
+        List<Product> result = store.find(IO.getString(scanner, "","Index: "));
         printTable(tClass, result);
         System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();

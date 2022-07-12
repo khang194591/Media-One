@@ -1,5 +1,7 @@
 package model;
 
+import io.IO;
+
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
@@ -13,12 +15,9 @@ public class Fee implements Serializable {
     private Date date;
 
     public Fee(Scanner scanner) {
-        System.out.print("Kiểu phí: ");
-        title = scanner.nextLine().trim();
-        System.out.print("Tổng tiền: ");
-        totalMoney = Double.parseDouble(scanner.nextLine().trim());
-        System.out.print("Nội dung miêu tả (thông tin phí, số lượng): ");
-        description = scanner.nextLine().trim();
+        title = IO.getString(scanner, "", "Kiểu phí: ");
+        totalMoney = Double.parseDouble(IO.getString(scanner, "", "Tổng tiền: "));
+        description = IO.getString(scanner, "", "Nội dung miêu tả (thông tin phí, số lượng): ");
         date = new Date();
         System.out.print("Ngày tháng năm: " + date);
     }
@@ -30,7 +29,7 @@ public class Fee implements Serializable {
         this.date = date;
     }
 
-    public void show () {
+    public void show() {
         System.out.println("Kiểu phí: " + title);
         System.out.println("Tổng tiền: " + totalMoney);
         System.out.println("Nội dung miêu tả (thông tin phí, số lượng): " + description);
@@ -42,11 +41,13 @@ public class Fee implements Serializable {
         cal.setTime(date);
         return cal.get(Calendar.MONTH + 1);
     }
+
     public int getYear() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         return cal.get(Calendar.YEAR);
     }
+
     public String getTitle() {
         return title;
     }
@@ -54,6 +55,7 @@ public class Fee implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
+
     public String getDescription() {
         return description;
     }
@@ -77,6 +79,7 @@ public class Fee implements Serializable {
     public void setDate(Date date) {
         this.date = date;
     }
+
     @Override
     public String toString() {
         return "Fee{" +

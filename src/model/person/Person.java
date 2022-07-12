@@ -1,5 +1,7 @@
 package model.person;
 
+import io.IO;
+
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -13,10 +15,8 @@ public class Person implements Serializable {
     }
 
     public Person(Scanner scanner) {
-        System.out.print("Name: ");
-        name = scanner.nextLine().trim();
-        System.out.print("Age: ");
-        age = Integer.parseInt(scanner.nextLine().trim());
+        name = IO.getString(scanner, "", "Tên: ");
+        age = Integer.parseInt(IO.getString(scanner, "", "Tuổi: "));
     }
 
     public String getName() {
