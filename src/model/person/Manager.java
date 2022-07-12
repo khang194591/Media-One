@@ -133,6 +133,7 @@ public class Manager extends Person {
         int age = Integer.parseInt(scanner.nextLine());
         System.out.print("Lương nhân viên: ");
         double salary = Double.parseDouble(scanner.nextLine());
+        System.out.print("Tên đăng nhập: ");
         String username = scanner.nextLine().trim();
         System.out.print("Mật khẩu: ");
         String password = scanner.nextLine().trim();
