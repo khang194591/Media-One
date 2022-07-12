@@ -39,7 +39,7 @@ public class Fee implements Serializable {
     public int getMonth() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
-        return cal.get(Calendar.MONTH + 1);
+        return cal.get(Calendar.MONTH) + 1;
     }
 
     public int getYear() {

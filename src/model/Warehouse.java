@@ -13,11 +13,11 @@ public class Warehouse {
     private final Store bookStore;
     private final Store musicDiscStore;
     private final Store movieDiscStore;
-    private List<Bill> listBill; // list of paid bills
+    private final List<Bill> listBill; // list of paid bills
     private List<Staff> listStaff; // list of staffs
 
-    private List<MaintenanceFee> listMaintenanceFee; // list of MaintenanceFee
-    private List<NonFixedFee> listNonFixedFee; // list of NonFixedFee
+    private final List<MaintenanceFee> listMaintenanceFee; // list of MaintenanceFee
+    private final List<NonFixedFee> listNonFixedFee; // list of NonFixedFee
     private double profit; //
     private int soldNumber;
 
@@ -27,8 +27,8 @@ public class Warehouse {
         movieDiscStore = new Store(MovieDisc.class);
         listBill = (List<Bill>) IOFile.readFormFile("data/bills.txt");
         listStaff = (List<Staff>) IOFile.readFormFile("data/staffs.txt");
-        listMaintenanceFee = (List<MaintenanceFee>) IOFile.readFormFile("data/maintenanceFees");
-        listNonFixedFee = (List<NonFixedFee>) IOFile.readFormFile("data/nonFixedFees");
+        listMaintenanceFee = (List<MaintenanceFee>) IOFile.readFormFile("data/maintenanceFees.txt");
+        listNonFixedFee = (List<NonFixedFee>) IOFile.readFormFile("data/nonFixedFees.txt");
     }
 
     // add
@@ -37,6 +37,7 @@ public class Warehouse {
     // thao tac voi Bill
     public void addListBill(Bill bill) {
         if (bill == null) return;
+        if (bill.getQtyOrdered() == 0) return;
         listBill.add(bill);
     }
 
@@ -84,7 +85,7 @@ public class Warehouse {
     public List<Fee> getListMaintenanceFee() {
         List<Fee> list = new ArrayList<>();
         for (MaintenanceFee item : listMaintenanceFee) {
-            list.add((Fee) item);
+            list.add(item);
         }
         return list;
     }
@@ -92,16 +93,15 @@ public class Warehouse {
     public List<Fee> getListNonFixedFee() {
         List<Fee> list = new ArrayList<>();
         for (NonFixedFee item : listNonFixedFee) {
-            list.add((Fee) item);
+            list.add(item);
         }
         return list;
     }
 
     public Store getStoreByType(Class tClass) {
-        Store store = tClass.equals(Book.class) ? this.bookStore :
+        return tClass.equals(Book.class) ? this.bookStore :
                 tClass.equals(MusicDisc.class) ? this.musicDiscStore :
                         tClass.equals(MovieDisc.class) ? this.movieDiscStore : null;
-        return store;
     }
 
     // Phuong thuc nay hoi ngu
@@ -142,7 +142,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month == 0 && year != 0) {
+        if (month == 0) {
             for (Bill bill : listBill) {
                 if (bill.getYear() == year) {
                     total += bill.totalCost();
@@ -150,7 +150,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month != 0 && year != 0) {
+        if (year != 0) {
             for (Bill bill : listBill) {
                 if (bill.getYear() == year && bill.getMonth() == month) {
                     total += bill.totalCost();
@@ -169,7 +169,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month == 0 && year != 0) {
+        if (month == 0) {
             for (NonFixedFee item : listNonFixedFee) {
                 if (item.getYear() == year) {
                     total += item.getTotalMoney();
@@ -177,7 +177,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month != 0 && year != 0) {
+        if (year != 0) {
             for (NonFixedFee item : listNonFixedFee) {
                 if (item.getYear() == year && item.getMonth() == month) {
                     total += item.getTotalMoney();
@@ -196,7 +196,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month == 0 && year != 0) {
+        if (month == 0) {
             for (MaintenanceFee item : listMaintenanceFee) {
                 if (item.getYear() == year) {
                     total += item.getTotalMoney();
@@ -204,7 +204,7 @@ public class Warehouse {
             }
             return total;
         }
-        if (month != 0 && year != 0) {
+        if (year != 0) {
             for (MaintenanceFee item : listMaintenanceFee) {
                 if (item.getYear() == year && item.getMonth() == month) {
                     total += item.getTotalMoney();
@@ -218,7 +218,7 @@ public class Warehouse {
 
     public void revenueStatistics(int startMonth, int startYear, int endMonth, int endYear) {
         List<Double> array = new ArrayList<>(); // save each profit
-        int count = 0;
+        int count;
         double profit = 0; // save all profit
         double buffer = 0; // save each profit
         double allMoneyFormBill = 0,
@@ -228,7 +228,6 @@ public class Warehouse {
             System.out.println("Tổng chi");
             System.out.printf("%40s|%40s|%50s\n", "Nội dung", "Số tiền", "Thời gian");
             for (int i = startYear; i <= endYear; i++) {
-                buffer = 0;
                 System.out.printf("%40s|%40s|%50s\n", "NonFixedFee + MaintenanceFee",
                         allNonFixedFee(0, i) + allMaintenanceFee(0, i),
                         i);
@@ -268,7 +267,7 @@ public class Warehouse {
             System.out.println("Tổng thu");
             System.out.printf("%40s|%40s|%50s\n", "Nội dung", "Số tiền", "Thời gian");
             for (i = startYear; i <= endYear; i++) {
-                for (j = startMonth; j <= endMonth && i <= endYear; j++) {
+                for (j = startMonth; j <= endMonth; j++) {
                     System.out.printf("%40s|%40s|%50s\n", "Thu từ khách hàng",
                             allMoneyFormBill(i, j),
                             "Tháng " + i + "Năm" + j);

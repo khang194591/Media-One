@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class IO {
     static public String getString(Scanner scanner, String defaultValue, String message) {
         System.out.print(message);
-        String buff = "";
+        String buff;
         buff = scanner.nextLine().trim();
 
         if (!defaultValue.equals("") && buff.equals("")) {

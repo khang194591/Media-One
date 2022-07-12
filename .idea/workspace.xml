@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7967257a-626b-45b7-9394-c9998f0a2cde" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/src/io/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/bills.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/bills.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/maintenanceFees.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/maintenanceFees.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/staffs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/staffs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/IO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/IO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Fee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Fee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Warehouse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Warehouse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/person/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/person/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/MovieDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/MovieDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/MusicDisc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/MusicDisc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/product/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,15 +38,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Khang/Desktop/Github/media-one&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AtomConfig&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Khang/Desktop/Github/media-one",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "AtomConfig"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Khang\Desktop\media-one\src\model" />
@@ -99,7 +94,8 @@
       <workItem from="1657539757711" duration="2337000" />
       <workItem from="1657594571724" duration="1810000" />
       <workItem from="1657597837323" duration="592000" />
-      <workItem from="1657614462667" duration="3034000" />
+      <workItem from="1657614462667" duration="4309000" />
+      <workItem from="1657625489116" duration="3744000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1657470028808</created>
@@ -122,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657595773140</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update">
+      <created>1657617589935</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657617589935</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

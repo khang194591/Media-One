@@ -76,7 +76,7 @@ public class Menu {
 
     static public void staffMenu() {
         int option = 0;
-        while (option != 3) {
+        while (true) {
             System.out.println("\n----------\n");
             System.out.println("1. Tạo hóa đơn mới");
             System.out.println("2. Phí phát sinh");
@@ -88,9 +88,7 @@ public class Menu {
                 option = 0;
             }
             switch (option) {
-                case 1 -> {
-                    creatBill();
-                }
+                case 1 -> creatBill();
                 case 2 -> {
                     System.out.println("Phí phát sinh.");
                     reportIncurred();
@@ -98,16 +96,14 @@ public class Menu {
                 case 3 -> {
                     return;
                 }
-                default -> {
-                    System.out.println("Lựa chọn không hợp lệ!!!");
-                }
+                default -> System.out.println("Lựa chọn không hợp lệ!!!");
             }
         }// end while
     }
 
     private static void creatBill() {
-        int option = 0;
-        Class type = null;
+        int option;
+        Class type;
 //      Cần  sửa thành tìm tới Staff đang đăng nhập và nhập thông tin khách hàng
         Staff staff = (Staff) user;
         Customer newCustomer;
@@ -165,9 +161,7 @@ public class Menu {
                     System.out.println("Hủy hóa đơn");
                     return;
                 }
-                default -> {
-                    System.out.println("Lựa chọn không hợp lệ!!!");
-                }
+                default -> System.out.println("Lựa chọn không hợp lệ!!!");
             }
         }// end while
     }// end func
@@ -194,7 +188,7 @@ public class Menu {
 
     static public void managerMenu() {
         int option = 0;
-        while (option != 7) {
+        while (true) {
             System.out.println("\n----------\n");
             System.out.println("1. Quản lý sản phẩm");
             System.out.println("2. Quản lý nhân viên");
@@ -210,15 +204,9 @@ public class Menu {
                 option = 0;
             }
             switch (option) {
-                case 1 -> {
-                    manageProducts();
-                }
-                case 2 -> {
-                    manageStaffs();
-                }
-                case 3 -> {
-                    revenueStatistics();
-                }
+                case 1 -> manageProducts();
+                case 2 -> manageStaffs();
+                case 3 -> revenueStatistics();
                 case 4 -> {
                     System.out.println("Phí không cố định");
                     for (Fee item : warehouse.getListNonFixedFee()) {
@@ -317,8 +305,10 @@ public class Menu {
                     manager.paySalary();
                     break;
                 case 5:
+                    break;
                 default:
                     System.out.println("Lựa chọn không hợp lệ!!!");
+                    break;
             }
         }
     } // end func
@@ -429,7 +419,7 @@ public class Menu {
         if (tClass == null) return;
         Store store = getStoreProduct(tClass);
         List<Product> list = store.getList();
-        List<Product> result = store.find(IO.getString(scanner, "","Index: "));
+        List<Product> result = store.find(IO.getString(scanner, "", "Index: "));
         printTable(tClass, result);
         System.out.print("Xin mời nhập phím bất kỳ để tiếp tục: ");
         scanner.nextLine();

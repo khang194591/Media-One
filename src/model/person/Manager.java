@@ -86,7 +86,7 @@ public class Manager extends Person {
             System.out.println("Can't find product");
             return;
         }
-        List<Product> printList = new ArrayList<Product>();
+        List<Product> printList = new ArrayList<>();
         printList.add(product);
 
         Menu.printTable(tClass, printList);
@@ -163,15 +163,23 @@ public class Manager extends Person {
 
     public void paySalary() {
         Calendar nowDate = Calendar.getInstance();
-        System.out.print("Pay salary this month " + (nowDate.get(Calendar.MONTH) + 1) + " (Y/N)?: ");
-        if (IO.getString(scanner, "", "").toLowerCase().equals("y")) {
+        System.out.print("Thanh toán lương tháng này " + (nowDate.get(Calendar.MONTH) + 1) + " (Y/N)?: ");
+        if (IO.getString(scanner, "", "").equalsIgnoreCase("y")) {
             List<Staff> listStaff = warehouse.getListStaff();
+            List<Fee> fees = warehouse.getListMaintenanceFee();
+            for (Fee fee : fees) {
+                if (Calendar.getInstance().get(Calendar.MONTH) + 1 == fee.getMonth()) {
+                    if (Calendar.getInstance().get(Calendar.YEAR) == fee.getYear()) {
+                        System.out.println("Tháng này đã thanh toán lương rồi!!!");
+                        return;
+                    }
+                }
+            }
             MaintenanceFee newFee;
-            String title = "Pay salary month " + (nowDate.get(Calendar.MONTH) + 1);
-            String des = "For " + listStaff.size() + " staff";
+            String title = "Thanh toán lương tháng " + (nowDate.get(Calendar.MONTH) + 1);
+            String des = "Cho " + listStaff.size() + " nhân viên";
             double totalMoney = 0;
-            for (int i = 0; i < listStaff.size(); i++) {
-                Staff staff = listStaff.get(i);
+            for (Staff staff : listStaff) {
                 totalMoney += staff.getSalary();
             }
             newFee = new MaintenanceFee(title, des, totalMoney, nowDate.getTime());
